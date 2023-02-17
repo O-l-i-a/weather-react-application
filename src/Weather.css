@@ -1,0 +1,64 @@
+.Weather h2 {
+    font-size: 48px;
+  }
+.Weather .vertical-centered-images {
+    margin-top: 10px;
+}
+.Weather .inactive{
+      color: black;
+      text-decoration: none;
+}
+.Weather .inactive:hover{
+      color: black;
+      cursor: default;
+}
+.Weather .whole-page {
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+.Weather .search-field {
+    max-width: 600px;
+    margin: 10px auto;
+}
+.Weather .search-and-city-name {
+    position: sticky;
+    top: 2px;
+    background-color: white;
+} 
+.Weather .weather-today {
+    margin-bottom: 50px;
+}
+
+.Weather .city-name {
+    font-size: 70px;
+    text-align: center;
+    border-bottom: 3px solid #656565;
+    padding-bottom: 4px;
+}
+.Weather .vertical-centered {
+    display: table-cell;
+    vertical-align: middle;
+}
+.Weather a{
+    text-decoration: none;
+}
+.Weather .centered {
+    padding: 0;
+    display: table;
+    text-align: center;
+}
+@media (max-width: 484px){
+    .Weather .city-name {
+      font-size: 61px;
+    }
+    .Weather .text-in-search{
+      font-size: 5px !important;
+    }
+    .Weather h2 {
+      font-size: 33px;
+    }
+    .Weather .preciration {
+      font-size: 18px;
+    }
+}
