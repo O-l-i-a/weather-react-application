@@ -2,12 +2,11 @@ import React, { useState} from "react";
 import "./Weather.css";
 import axios from "axios";
 import {MagnifyingGlass} from "react-loader-spinner";
-import DisplayDate from "./DisplayDate";
+import WeatherToday from "./WeatherToday";
 
 export default function Weather(props){
 	let [weatherData, setWeatherData] = useState({ready: false});
 	if (weatherData.ready){
-		let link =`http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`;
     return(
         <div className = "Weather">
 	        <div className="container"> 
@@ -20,30 +19,8 @@ export default function Weather(props){
 					        <input type="submit" value = "Current" className="btn btn-outline-secondary" id="button-addon3" />
 				        </div>
 			        </form>
-                    <h1 className="city-name">{props.city}</h1>
 		        </div>
-	            <div className="whole-page">
-		            <article className = "weather-today">
-			            <div className="row">
-				            <div className="col-6 p-3">
-					            <img className = "img-fluid" src={link} alt = {weatherData.description}/>
-				            </div>
-				            <div className="col-6 p-3 centered">
-					            <h2 className="vertical-centered" id = "time"><DisplayDate date = {weatherData.date}/></h2>
-				            </div>
-				            <div className="col-6 p-3 centered">
-					            <h2 className="vertical-centered"> 
-						        <span id="temperature">{weatherData.temp}</span>
-						        <span id="celsius" className = "inactive"> °C</span>| <span id="farengeit">°F</span>
-						        </h2>
-				            </div>
-				            <div className="col-6 p-3 centered">
-					            <h3 className="preciration vertical-centered">💧 <span id="humidity">{weatherData.humidity}</span>% <br/> 💨 <span id="wind">{weatherData.wind}</span>km/h</h3>
-				            </div>
-			            </div>
-		            </article>
-		            <p className="developer"> <a href="https://github.com/O-l-i-a/weather-application">Open-sourse code</a> by Olha Melnyk</p>
-	            </div>
+				<WeatherToday data = {weatherData} city = {props.city}/>
 	        </div>
         </div>
     )
