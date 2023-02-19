@@ -1,8 +1,8 @@
 import React from "react";
 import DisplayDate from "./DisplayDate";
+import DisplayIcon from "./DisplayIcon";
 
 export default function WeatherToday(props){
-    let link =`http://openweathermap.org/img/wn/${props.data.icon}@2x.png`;
     return(
         <div className = "WeatherToday">
             <h1 className="city-name">{props.data.cityName}</h1>
@@ -10,7 +10,7 @@ export default function WeatherToday(props){
 		            <article className = "weather-today">
 			            <div className="row">
 				            <div className="col-6 p-3">
-					            <img className = "img-fluid" src={link} alt = {props.data.description}/>
+                                <DisplayIcon icon = {props.data.icon}/>
 				            </div>
 				            <div className="col-6 p-3 centered">
 					            <h2 className="vertical-centered" id = "time"><DisplayDate date = {props.data.date}/></h2>
