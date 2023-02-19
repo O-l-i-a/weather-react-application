@@ -1,6 +1,7 @@
 import React from "react";
 import DisplayDate from "./DisplayDate";
 import DisplayIcon from "./DisplayIcon";
+import Units from "./Units";
 
 export default function WeatherToday(props){
     return(
@@ -17,8 +18,8 @@ export default function WeatherToday(props){
 				            </div>
 				            <div className="col-6 p-3 centered">
 					            <h2 className="vertical-centered"> 
-						        <span id="temperature">{props.data.temp}</span>
-						        <span id="celsius" className = "inactive"> °C</span>| <span id="farengeit">°F</span>
+						        
+						        <Units temp = {props.data.temp}/>
 						        </h2>
 				            </div>
 				            <div className="col-6 p-3 centered">
