@@ -1,7 +1,9 @@
 import React, { useState} from "react";
 import "./Weather.css";
 import axios from "axios";
-import {MagnifyingGlass} from "react-loader-spinner"
+import {MagnifyingGlass} from "react-loader-spinner";
+import DisplayDate from "./DisplayDate";
+
 export default function Weather(props){
 	let [weatherData, setWeatherData] = useState({ready: false});
 	if (weatherData.ready){
@@ -27,7 +29,7 @@ export default function Weather(props){
 					            <img className = "img-fluid" src={link} alt = {weatherData.description}/>
 				            </div>
 				            <div className="col-6 p-3 centered">
-					            <h2 className="vertical-centered" id = "time"> Sunday 15:50</h2>
+					            <h2 className="vertical-centered" id = "time"><DisplayDate date = {weatherData.date}/></h2>
 				            </div>
 				            <div className="col-6 p-3 centered">
 					            <h2 className="vertical-centered"> 
@@ -55,7 +57,8 @@ export default function Weather(props){
 				temp: Math.round(response.data.main.temp),
 				wind: Math.round(response.data.wind.speed),
 				icon: response.data.weather[0].icon,
-				description: response.data.weather[0].description
+				description: response.data.weather[0].description,
+				date: new Date (response.data.dt*1000)
 			})
 		}
 		let APIKey = "c119ffef35b7245a5e03b6e5724ae961";
