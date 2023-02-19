@@ -5,7 +5,7 @@ export default function WeatherToday(props){
     let link =`http://openweathermap.org/img/wn/${props.data.icon}@2x.png`;
     return(
         <div className = "WeatherToday">
-            <h1 className="city-name">{props.city}</h1>
+            <h1 className="city-name">{props.data.cityName}</h1>
 	            <div className="whole-page">
 		            <article className = "weather-today">
 			            <div className="row">
