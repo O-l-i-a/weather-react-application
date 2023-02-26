@@ -14,7 +14,6 @@ export default function WeatherForecast(props) {
       <div className="WeatherForecast weather-the-next-days">
         {forecast.map(function(daily, index){
           if (index < 6){
-            
             return(
               <div key = {index}>
                 <ForecastDay key = {index} data = {daily}/>
@@ -22,13 +21,11 @@ export default function WeatherForecast(props) {
               )
           }else{return null}
         })}
-        
       </div>
     );
     }
     else{
       function handleResponse(response) {
-        console.log(response.data);
         setForecast(response.data.daily);
         setLoaded(true);
       }
