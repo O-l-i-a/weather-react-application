@@ -11,7 +11,7 @@ export default function WeatherToday(props){
 		            <article className = "weather-today">
 			            <div className="row">
 				            <div className="col-6 p-3">
-                                <DisplayIcon icon = {props.data.icon}/>
+                                <DisplayIcon icon = {props.data.icon} size = {150}/>
 				            </div>
 				            <div className="col-6 p-3 centered">
 					            <h2 className="vertical-centered" id = "time"><DisplayDate date = {props.data.date}/></h2>
@@ -27,7 +27,6 @@ export default function WeatherToday(props){
 				            </div>
 			            </div>
 		            </article>
-		            <p className="developer"> <a href="https://github.com/O-l-i-a/weather-application">Open-sourse code</a> by Olha Melnyk</p>
 	            </div>
         </div>
     )

@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import {MagnifyingGlass} from "react-loader-spinner";
 import WeatherToday from "./WeatherToday";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props){
 	let [weatherData, setWeatherData] = useState({ready: false});
@@ -17,7 +18,9 @@ export default function Weather(props){
 			wind: Math.round(response.data.wind.speed),
 			icon: response.data.weather[0].icon,
 			description: response.data.weather[0].description,
-			date: new Date (response.data.dt*1000)
+			date: new Date (response.data.dt*1000),
+			lat: response.data.coord.lat,
+			lon: response.data.coord.lon
 		})
 	}
 	function search() {
@@ -46,6 +49,7 @@ export default function Weather(props){
 			        </form>
 		        </div>
 				<WeatherToday data = {weatherData} />
+				<WeatherForecast lat = {weatherData.lat} lon= {weatherData.lon}/>
 	        </div>
         </div>
     )

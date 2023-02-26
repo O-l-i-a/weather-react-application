@@ -65,3 +65,18 @@
       font-size: 18px;
     }
 }
+
+
+.day-name{
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
+.temperatur-next-day {
+    font-size: 31px;
+}
+.next-day {
+    border: 3px solid #656565;
+    padding: 20px 15px 15px 15px;
+    margin-bottom: 10px;
+}
